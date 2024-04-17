@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Ingredient</title>
 </head>
 
 <body>
     <h2>Create Ingredient</h2>
-    <form action="http://localhost/ingredient_api.php" method="post">
+    <form id="ingredientForm" method="post">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
         <label for="price">Price:</label><br>
@@ -22,32 +22,7 @@
         <input type="submit" value="Create">
     </form>
 
-    <script>
-        // Sử dụng XMLHttpRequest
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost/ingredient_api.php', true);
-
-        // Đặt tiêu đề Content-Type cho yêu cầu
-        xhr.setRequestHeader('Content-Type', 'application/json');
-
-        xhr.onload = function () {
-            // Kiểm tra mã trạng thái HTTP
-            if (xhr.status >= 200 && xhr.status < 300) {
-                // Chuyển đổi dữ liệu nhận được từ dạng JSON sang đối tượng JavaScript
-                var responseData = JSON.parse(xhr.responseText);
-
-                // Hiển thị dữ liệu
-                console.log(responseData);
-            } else {
-                // Xử lý lỗi
-                console.error('Request failed with status:', xhr.status);
-            }
-        };
-
-        // Gửi yêu cầu
-        xhr.send();
-
-    </script>
+    <script src="./main.js" type="module"></script>
 </body>
 
 </html>

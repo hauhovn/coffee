@@ -32,7 +32,6 @@ if ($method === "GET") {
 elseif ($method === "POST") {
     // Đọc dữ liệu từ body của yêu cầu
     $data = json_decode(file_get_contents("php://input"), true);
-    
     // Lấy dữ liệu từ body
     $name = $data['name'];
     $price = $data['price'];
