@@ -10,17 +10,18 @@
 
 <body>
     <h2>Create Ingredient</h2>
-    <form id="ingredientForm" method="post">
+    <form id="ingredientForm">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
         <label for="price">Price:</label><br>
         <input type="number" id="price" name="price" required><br>
-        <label for="quantity">Quantity:</label><br>
-        <input type="number" id="quantity" name="quantity" required><br>
         <label for="unit">Unit:</label><br>
         <input type="text" id="unit" name="unit" required><br><br>
         <input type="submit" value="Create">
     </form>
+
+
+    <button id="getValueBtn">Get</button>
 
     <script src="./main.js" type="module"></script>
 </body>

@@ -1,7 +1,9 @@
-import {getIngredients,createIngredient} from './ingredient.js';
+import { getIngredients, createIngredient } from './ingredient.js';
+
+const getValueBtn = document.getElementById('getValueBtn');
 
 
-document.getElementById("ingredientForm").addEventListener("submit", function(event) {
+document.getElementById("ingredientForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -14,4 +16,7 @@ document.getElementById("ingredientForm").addEventListener("submit", function(ev
     createIngredient(name, price, quantity, unit);
 });
 
+getValueBtn.onclick = () => {
+    getIngredients();
+}
 

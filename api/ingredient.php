@@ -4,6 +4,8 @@ require "connection.php";
 
 // Thiết lập tiêu đề cho API
 header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 
 // Kiểm tra phương thức HTTP
 $method = $_SERVER["REQUEST_METHOD"];
@@ -11,8 +13,14 @@ $method = $_SERVER["REQUEST_METHOD"];
 // Xử lý yêu cầu GET - Lấy tất cả các nguyên liệu
 if ($method === "GET") {
     try {
+       
+        if(isset($_GET['limit'])){
+            $limit = "limit ".($_GET['limit']);
+        }else{
+            $limit = "";
+        }
         // Chuẩn bị câu truy vấn SQL để lấy tất cả các nguyên liệu
-        $sql = "SELECT * FROM ingredients";
+        $sql = "SELECT * FROM ingredients $limit";
         
         // Thực thi câu truy vấn SQL
         $stmt = $conn->query($sql);
@@ -30,17 +38,16 @@ if ($method === "GET") {
 
 // Xử lý yêu cầu POST - Tạo mới nguyên liệu
 elseif ($method === "POST") {
-    // Đọc dữ liệu từ body của yêu cầu
-    $data = json_decode(file_get_contents("php://input"), true);
-    // Lấy dữ liệu từ body
-    $name = $data['name'];
-    $price = $data['price'];
-    $quantity = $data['quantity'];
-    $unit = $data['unit'];
-    
+   // Đọc dữ liệu từ body của yêu cầu
+   $data = json_decode(file_get_contents("php://input"), true);
+
+     // Lấy dữ liệu từ body
+     $name = $data['name'];
+     $price = $data['price'];
+     $unit = $data['unit'];
     try {
         // Chuẩn bị câu truy vấn SQL để chèn nguyên liệu mới vào cơ sở dữ liệu
-        $sql = "INSERT INTO ingredients (name, price, quantity, unit) VALUES (:name, :price, :quantity, :unit)";
+        $sql = "INSERT INTO ingredients (name, price, unit) VALUES (:name, :price, :unit)";
         
         // Sử dụng prepared statement để ngăn chặn tấn công SQL injection
         $stmt = $conn->prepare($sql);
@@ -48,7 +55,6 @@ elseif ($method === "POST") {
         // Bind các giá trị vào các tham số của câu lệnh SQL
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':price', $price);
-        $stmt->bindParam(':quantity', $quantity);
         $stmt->bindParam(':unit', $unit);
         
         // Thực thi câu lệnh SQL
@@ -57,8 +63,8 @@ elseif ($method === "POST") {
         // Trả về thông báo thành công
         echo json_encode(["message" => "Ingredient created successfully"]);
     } catch(PDOException $e) {
-        // Trả về thông báo lỗi nếu có lỗi xảy ra
-        echo json_encode(["error" => $e->getMessage()]);
+         // Trả về thông báo lỗi nếu có lỗi xảy ra
+         echo json_encode(["error" => $e->getMessage()]);
     }
 }
 
