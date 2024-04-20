@@ -10,7 +10,7 @@ header("Access-Control-Allow-Headers: *");
 // Kiểm tra phương thức HTTP
 $method = $_SERVER["REQUEST_METHOD"];
 
-$table = "ingredients";
+$table = "users";
 
 // Xử lý yêu cầu GET - Lấy tất cả các nguyên liệu
 if ($method === "GET") {
@@ -44,26 +44,65 @@ elseif ($method === "POST") {
    $data = json_decode(file_get_contents("php://input"), true);
 
      // Lấy dữ liệu từ body
-     $name = $data['name'];
-     $price = $data['price'];
-     $unit = $data['unit'];
+     $email = $data['email'];
+     $first_name = $data['first_name'];
+     $last_name = $data['last_name'];
+     $password = $data['password'];
+
+     if(!isset($email)||!isset($first_name)||!isset($last_name)||!isset($password)){
+        echo json_encode(["error" => "Không nhận đủ thông tin"]);
+        // Dừng xử lý ở đây
+        exit();
+     }
+
     try {
+        // =======================check account============================== //
+        // SQL lấy email có status >=0
+        $select_user_sql = "SELECT email FROM ".$table. 
+        " WHERE email = '".$email."' AND STATUS >=0";
+
+        // Thực thi câu truy vấn SQL
+        // Chuẩn bị truy vấn SQL
+        $query = "SELECT * FROM your_table";
+        $user_all = $conn->prepare($select_user_sql);
+        // Thực thi câu lệnh SQL
+        $user_all->execute();
+       // Lấy kết quả
+        $result_user_all = $user_all->fetchAll(PDO::FETCH_ASSOC);
+        // Kiểm tra xem có dữ liệu được trả về không
+        if (count($result_user_all) > 0) {
+            // Dữ liệu được trả về
+            // foreach ($result_user_all as $row) {
+            //     // Xử lý từng dòng dữ liệu ở đây
+            //     var_dump($row);     
+            // }
+            echo json_encode(["error"=>"Email tồn tại"]);
+            exit();
+        } else {
+        // Không có dữ liệu được trả về == mail chưa được dùng
+
+        // Xử lý
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         // Chuẩn bị câu truy vấn SQL để chèn nguyên liệu mới vào cơ sở dữ liệu
-        $sql = "INSERT INTO ".$table." (name, price, unit) VALUES (:name, :price, :unit)";
+        $sql = "INSERT INTO ".$table." (email, first_name, last_name, password) VALUES (:email, :first_name, :last_name,:password)";
         
         // Sử dụng prepared statement để ngăn chặn tấn công SQL injection
         $stmt = $conn->prepare($sql);
         
         // Bind các giá trị vào các tham số của câu lệnh SQL
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':price', $price);
-        $stmt->bindParam(':unit', $unit);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':first_name', $first_name);
+        $stmt->bindParam(':last_name', $last_name);
+        $stmt->bindParam(':password', $hashed_password);
         
         // Thực thi câu lệnh SQL
         $stmt->execute();
         
         // Trả về thông báo thành công
         echo json_encode(["message" => "Ingredient created successfully"]);
+
+        }
+       
     } catch(PDOException $e) {
          // Trả về thông báo lỗi nếu có lỗi xảy ra
          echo json_encode(["error" => $e->getMessage()]);
@@ -76,4 +115,17 @@ else {
     http_response_code(405); // Method Not Allowed
     echo json_encode(["error" => "Method not allowed"]);
 }
+
+// $hashed_password_from_database = "hashed_password_retrieved_from_database";
+
+// // Kiểm tra mật khẩu
+// if (password_verify($password_from_user_input, $hashed_password_from_database)) {
+//     // Mật khẩu hợp lệ
+//     echo "Password is correct";
+// } else {
+//     // Mật khẩu không hợp lệ
+//     echo "Password is incorrect";
+// }
 ?>
+
+
