@@ -1,6 +1,6 @@
 <?php
 // Gọi file connection.php
-require "connection.php";
+require "../connection.php";
 
 // Thiết lập tiêu đề cho API
 header("Content-Type: application/json");
@@ -36,6 +36,7 @@ if ($method === "GET") {
         // Trả về thông báo lỗi nếu có lỗi xảy ra
         echo json_encode(["error" => $e->getMessage()]);
     }
+    echo json_encode(["sql" => $sql]);
 }
 
 // Xử lý yêu cầu POST - Tạo mới nguyên liệu
@@ -50,7 +51,7 @@ elseif ($method === "POST") {
     try {
         // Chuẩn bị câu truy vấn SQL để chèn nguyên liệu mới vào cơ sở dữ liệu
         $sql = "INSERT INTO ".$table." (name, price, unit) VALUES (:name, :price, :unit)";
-        
+        echo json_encode(["sql" => $sql]);
         // Sử dụng prepared statement để ngăn chặn tấn công SQL injection
         $stmt = $conn->prepare($sql);
         

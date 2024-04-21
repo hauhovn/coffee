@@ -1,6 +1,6 @@
 <?php
 // Gọi file connection.php
-require "connection.php";
+require "../connection.php";
 
 // Thiết lập tiêu đề cho API
 header("Content-Type: application/json");
@@ -71,16 +71,10 @@ elseif ($method === "POST") {
         $result_user_all = $user_all->fetchAll(PDO::FETCH_ASSOC);
         // Kiểm tra xem có dữ liệu được trả về không
         if (count($result_user_all) > 0) {
-            // Dữ liệu được trả về
-            // foreach ($result_user_all as $row) {
-            //     // Xử lý từng dòng dữ liệu ở đây
-            //     var_dump($row);     
-            // }
             echo json_encode(["error"=>"Email tồn tại"]);
             exit();
         } else {
         // Không có dữ liệu được trả về == mail chưa được dùng
-
         // Xử lý
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         // Chuẩn bị câu truy vấn SQL để chèn nguyên liệu mới vào cơ sở dữ liệu
@@ -99,8 +93,7 @@ elseif ($method === "POST") {
         $stmt->execute();
         
         // Trả về thông báo thành công
-        echo json_encode(["message" => "Ingredient created successfully"]);
-
+        echo json_encode(["message" => "Hello ".$last_name." your email: ".$email]);
         }
        
     } catch(PDOException $e) {
@@ -115,17 +108,6 @@ else {
     http_response_code(405); // Method Not Allowed
     echo json_encode(["error" => "Method not allowed"]);
 }
-
-// $hashed_password_from_database = "hashed_password_retrieved_from_database";
-
-// // Kiểm tra mật khẩu
-// if (password_verify($password_from_user_input, $hashed_password_from_database)) {
-//     // Mật khẩu hợp lệ
-//     echo "Password is correct";
-// } else {
-//     // Mật khẩu không hợp lệ
-//     echo "Password is incorrect";
-// }
 ?>
 
 
