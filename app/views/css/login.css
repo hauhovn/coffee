@@ -2,12 +2,113 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, sans-serif;
 }
 
 body {
-    background-image: linear-gradient(to right, #66f2f2b8, #9174d799);
+    background-image: linear-gradient(to right, #6AD4DD, #86469C);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+body form {
+    border-radius: 5px;
+    width: 360px;
+    height: 480px;
+    background-color: #0000009c;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    box-shadow: 14px 19px 24px -8px rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: 14px 19px 24px -8px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 14px 19px 24px -8px rgba(0, 0, 0, 0.63);
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+form input {
+    padding: 5px;
+    border: 0;
+    outline: none;
+    background: none;
+    color: #fff;
+}
+
+form button {
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 25px;
+    transition-duration: 1s;
+    background-color: #008170;
+    color: #fff;
+}
+
+form button:hover {
+
+    background-color: #86469C;
+    color: #fff;
+    transition-duration: 1s;
+}
+
+form div label {
+    color: #FBF9F1;
+}
+
+form img {
+    width: 200px;
+    height: auto;
+}
+
+form .box {
+    border-bottom: 1px solid #008170;
+}
+
+.password-box div {
+    display: flex;
+    flex-direction: row;
+}
+
+.password-box div div {
+    display: block;
+}
+
+.password-box div div i {
+    position: absolute;
+    cursor: pointer;
+}
+
+form a {
+    align-self: flex-end;
+    margin: 15px;
+    color: #008170;
+}
+
+#hidePass,
+#showPass {
+    font-size: 14px;
+    color: #FBF9F1;
+}
+
+/* Ẩn biểu tượng hiện mật khẩu khi mật khẩu được hiển thị */
+#showPass {
+    display: none;
+}
+
+.hide-show-icon-box {
+    margin-top: 7px;
+}
+
+form label {
+    font-size: 14px;
+    transition: font-size 0.3s ease;
 }

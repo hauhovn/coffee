@@ -13,10 +13,10 @@ if ($method === "POST") {
    $data = json_decode(file_get_contents("php://input"), true);
 
      // Lấy dữ liệu từ body
-     $email = $data['email'];
+     $phone = $data['phone'];
      $password = $data['password'];
 
-     if(!isset($email)||!isset($password)){
+     if(!isset($phone)||!isset($password)){
         echo json_encode(["error" => "Không nhận đủ thông tin"]);
         // Dừng xử lý ở đây
         exit();
@@ -25,12 +25,13 @@ if ($method === "POST") {
      try {
         // =======================check account============================== //
           // SQL lấy password có status >=0
-          $get_password_user_sql = "SELECT password FROM ".$table." WHERE email = :email AND STATUS >=0 limit 1";
+          $get_password_user_sql = "SELECT password FROM "
+          .$table." WHERE phone = :phone AND STATUS >=0 limit 1";
           $stmt = $conn->prepare($get_password_user_sql);
-          $stmt->bindParam(':email', $email);
+          $stmt->bindParam(':phone', $phone);
           $stmt->execute();
-        // $stmt = $conn->prepare("SELECT password FROM ".$table." WHERE email = ? AND STATUS >=0 limit 1");
-        // $stmt->execute([$email])
+        // $stmt = $conn->prepare("SELECT password FROM ".$table." WHERE phone = ? AND STATUS >=0 limit 1");
+        // $stmt->execute([$phone])
         // Đếm số hàng trả về
         $rowCount = $stmt->rowCount();  
         if ($rowCount > 0) {
@@ -42,7 +43,7 @@ if ($method === "POST") {
           // // Kiểm tra mật khẩu
               if (password_verify($password, $hashed_password)) {
                   // Mật khẩu hợp lệ
-                  echo json_encode(["message" => "Hello ".$email]);
+                  echo json_encode(["message" => "Hello ".$phone]);
                   // COOKIE
                   $arr_cookie_options = array (
                     'expires' => time() + 60*60*24*30, 
@@ -58,7 +59,7 @@ if ($method === "POST") {
                   echo json_encode(["message" => "Password is incorrect! Pls try again!"]);
               }
           } else {
-            echo json_encode(["message" => "Người dùng ".$email." không tồn tại","sql"=>$get_password_user_sql]);
+            echo json_encode(["message" => "Người dùng ".$phone." không tồn tại","sql"=>$get_password_user_sql]);
           }
     }catch(PDOException $e) {
         // Trả về thông báo lỗi nếu có lỗi xảy ra
