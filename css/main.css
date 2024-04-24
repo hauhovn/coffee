@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+
+/* HEADER STYLES */
+body>header {
+    background-color: #008170;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>img {
+    height: auto;
+    width: 120px;
+}
+
+header>article {
+    display: flex;
+    align-items: center;
+}
+
+header>article>img {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin-left: 10px;
+}
+
+header>article h3,
+header>article h4 {
+    color: #fff;
+}
+
+/* HEADER STYLES - END*/
+
+/* MAIN STYLES */
+main {
+    display: flex;
+    min-height: 450px;
+}
+
+main>* {
+    flex-grow: 1;
+}
+
+/* MAIN STYLES - END*/
+
+/* NAV STYLES */
+main>nav {
+    background-color: aquamarine;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown button {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height 0.15s ease-out;
+}
+
+.dropdown-content.active {
+    max-height: 200px;
+    transition: max-height 0.25s ease-in;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: start;
+}
+
+/* NAV STYLES - END*/
+
+/* SECTION STYLES */
+main>section {
+    background-color: rgba(132, 64, 196, 0.705);
+}
+
+/* SECTION STYLES - END*/
+
+/* ASDIE STYLES */
+main>aside {
+    background-color: rgba(132, 207, 57, 0.63);
+}
+
+/* ASDIE STYLES - END*/

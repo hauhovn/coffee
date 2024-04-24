@@ -1,29 +1,21 @@
-// import { getIngredients, createIngredient } from './ingredient.js';
+//Dropdown
+document.addEventListener('DOMContentLoaded', function () {
+    var dropdowns = document.querySelectorAll('.dropdown');
 
-// const getValueBtn = document.getElementById('getValueBtn');
-
-
-// document.getElementById("ingredientForm").addEventListener("submit", function (event) {
-//     event.preventDefault();
-
-//     const formData = new FormData(event.target);
-//     //
-//     const name = formData.get("name");
-//     const price = parseFloat(formData.get("price"));
-//     const quantity = parseFloat(formData.get("quantity"));
-//     const unit = formData.get("unit");
-//     //
-//     createIngredient(name, price, quantity, unit);
-// });
-
-// getValueBtn.onclick = () => {
-//     getIngredients();
-// }
-
-// Chuyển hướng đến một trang cụ thể
-const isLogin = false;
-if (isLogin) {
-    window.location.href = "./views/home.html";
-} else {
-    window.location.href = "./views/login.html";
-}
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function () {
+            // Lấy items bên trong dropdown
+            var dropdownContents = dropdown.querySelectorAll('.dropdown-content');
+            // Có phần tử dầu có class active -> remove : add
+            if (dropdownContents[0].classList.value.includes('active')) {
+                dropdownContents.forEach(function (item) {
+                    item.classList.remove('active');
+                })
+            } else {
+                dropdownContents.forEach(function (item) {
+                    item.classList.add('active');
+                })
+            }
+        })
+    });
+});
