@@ -73,34 +73,54 @@ form .box {
     border-bottom: 1px solid #008170;
 }
 
-.password-box div {
+.password-box div,.re-password-box div {
     display: flex;
     flex-direction: row;
 }
 
-.password-box div div {
+.password-box div div ,.re-password-box div div {
     display: block;
 }
 
-.password-box div div i {
+.password-box div div i ,.re-password-box div div i{
     position: absolute;
     cursor: pointer;
 }
-
-form a {
+form > div:last-of-type {
+    display: flex;
+    flex-direction: row;
     align-self: flex-end;
-    margin: 15px;
+    padding: 15px;
+}
+
+form > div:last-of-type a:nth-of-type(2){
+    margin: 0 5px 0 5px;
+}
+
+form a{
+    text-decoration: none;
+    align-self: flex-end;
     color: #008170;
+    transition-duration: 1s;
+    font-size: 12px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+form a:hover {
+    color: #fff;
 }
 
 #hidePass,
-#showPass {
+#showPass,
+#hideRePass,
+#showRePass {
     font-size: 14px;
     color: #FBF9F1;
 }
 
 /* Ẩn biểu tượng hiện mật khẩu khi mật khẩu được hiển thị */
-#showPass {
+#showPass,#showRePass {
     display: none;
 }
 

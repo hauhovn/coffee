@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
+    <title>Đăng ký</title>
     <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
     <form action="./home.html">
-        <img src="./imgs/logo-light.png" alt="Website Logo">
+        <img src="./img/logo-light.png" alt="Website Logo">
         <div class="box phone-box">
             <label for="phone" class="label-phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">Số điện thoại:</label>
             <input type="tel" class="input-phone" id="phone" name="phone">
@@ -26,10 +26,20 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="login-btn">Đăng nhập</button>
-        <a href="./sign-up.html">Đăng ký</a>
+        <div class="box re-password-box">
+            <label for="password" class="label-password">Nhập lại mật khẩu:</label>
+            <div>
+                <input type="password" class="input-password" id="rePassword" name="password">
+                <div class="hide-show-icon-box" id="boxShowPass">
+                    <i class="fa-solid fa-eye-slash" id="hideRePass"></i>
+                    <i class="fa-solid fa-eye" id="showRePass"></i>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="login-btn">Đăng ký</button>
+        <div><a href="./login.html">Đăng nhập</a></div>
     </form>
-    <script src="./js/login.js"></script>
+    <script src="./js/sign-up.js"></script>
     <script src="https://kit.fontawesome.com/3bcb8223c5.js" ; crossorigin="anonymous"></script>
 </body>
 
