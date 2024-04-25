@@ -44,15 +44,11 @@ main {
     min-height: 450px;
 }
 
-main>* {
-    flex-grow: 1;
-}
-
 /* MAIN STYLES - END*/
 
 /* NAV STYLES */
 main>nav {
-    background-color: aquamarine;
+    background-color: #00817093;
 }
 
 .dropdown {
@@ -60,17 +56,28 @@ main>nav {
     flex-direction: column;
 }
 
-.dropdown button {
+.dropdown > div *  {
     text-transform: uppercase;
-    text-align: center;
+    text-align: start;
+    border: none;
+    padding: 5px;
+    font-weight:600;
+    /* color: #FBF9F1; */
 }
-
+.dropdown-label {
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-start;
+    /* justify-content: space-between; */
+    /* background-color: red; */
+}
 .dropdown-content {
     display: flex;
     flex-direction: column;
     max-height: 0;
     overflow-y: hidden;
     transition: max-height 0.15s ease-out;
+    background-color: rgba(240, 248, 255, 0.788);
 }
 
 .dropdown-content.active {
@@ -81,14 +88,31 @@ main>nav {
 .dropdown-content a {
     text-decoration: none;
     text-transform: uppercase;
-    text-align: start;
+    color: gray;
+    padding-left: 26px;
+    font-size: 14px;
+    border-bottom: 1px solid #fff;
+    transition: 0.25s;
 }
-
+.dropdown-content a:hover {
+    background-color: #008170;
+    color: aliceblue;
+}
+.dropdown-btn , .fa-sharp.fa-solid{
+    color: gray;
+    font-size: 16px;
+    background-color: aliceblue;
+    width: 30px;
+}
+.dropdown-btn {
+    width: 160px;
+}
 /* NAV STYLES - END*/
 
 /* SECTION STYLES */
 main>section {
     background-color: rgba(132, 64, 196, 0.705);
+    flex-grow: 1; /* Sử dụng hết khoảng trống còn lại */
 }
 
 /* SECTION STYLES - END*/

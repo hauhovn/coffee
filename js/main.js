@@ -1,11 +1,11 @@
 //Dropdown
 document.addEventListener('DOMContentLoaded', function () {
-    var dropdowns = document.querySelectorAll('.dropdown');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
     dropdowns.forEach(function (dropdown) {
         dropdown.addEventListener('click', function () {
             // Lấy items bên trong dropdown
-            var dropdownContents = dropdown.querySelectorAll('.dropdown-content');
+            const dropdownContents = dropdown.querySelectorAll('.dropdown-content');
             // Có phần tử dầu có class active -> remove : add
             if (dropdownContents[0].classList.value.includes('active')) {
                 dropdownContents.forEach(function (item) {
@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 dropdownContents.forEach(function (item) {
                     item.classList.add('active');
                 })
+            }
+            //Đổi icon
+            const dropdownIcon = dropdown.querySelector('.fa-sharp');
+            if (dropdownIcon.classList.value.includes('fa-caret-down')){
+                dropdownIcon.classList.remove('fa-caret-down');
+                dropdownIcon.classList.add('fa-xmark');
+            }else{
+                dropdownIcon.classList.add('fa-caret-down');
+                dropdownIcon.classList.remove('fa-xmark');
             }
         })
     });
