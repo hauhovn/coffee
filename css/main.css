@@ -54,16 +54,18 @@ main>nav {
 .dropdown {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid gray;
 }
 
-.dropdown > div *  {
+.dropdown>div * {
     text-transform: uppercase;
     text-align: start;
     border: none;
     padding: 5px;
-    font-weight:600;
+    font-weight: 600;
     /* color: #FBF9F1; */
 }
+
 .dropdown-label {
     display: flex;
     flex-direction: row-reverse;
@@ -71,6 +73,7 @@ main>nav {
     /* justify-content: space-between; */
     /* background-color: red; */
 }
+
 .dropdown-content {
     display: flex;
     flex-direction: column;
@@ -90,36 +93,73 @@ main>nav {
     text-transform: uppercase;
     color: gray;
     padding-left: 26px;
-    font-size: 14px;
+    font-size: 12px;
     border-bottom: 1px solid #fff;
     transition: 0.25s;
 }
+
 .dropdown-content a:hover {
     background-color: #008170;
     color: aliceblue;
 }
-.dropdown-btn , .fa-sharp.fa-solid{
+
+.dropdown-btn,
+.fa-sharp.fa-solid {
     color: gray;
-    font-size: 16px;
+    font-size: 14px;
     background-color: aliceblue;
     width: 30px;
 }
+
 .dropdown-btn {
     width: 160px;
 }
+
 /* NAV STYLES - END*/
 
 /* SECTION STYLES */
 main>section {
-    background-color: rgba(132, 64, 196, 0.705);
-    flex-grow: 1; /* Sử dụng hết khoảng trống còn lại */
+    background-color: #00817057;
+    flex-grow: 1;
+}
+
+main>section .quick-assets-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: start;
+    align-content: flex-start;
+    /* Sử dụng hết khoảng trống còn lại */
+}
+
+
+.quick-assets-container>article {
+    /* background-color: red; */
+    height: 80px;
+    width: 100px;
+    margin: 4px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #fff;
+}
+
+.quick-assets-container>article a {
+    text-decoration: none;
 }
 
 /* SECTION STYLES - END*/
 
 /* ASDIE STYLES */
 main>aside {
-    background-color: rgba(132, 207, 57, 0.63);
+    background-color: #0081703d;
+    width: 160px;
+}
+
+main aside * {
+    font-size: small;
 }
 
 /* ASDIE STYLES - END*/
