@@ -1,3 +1,19 @@
+/* ROOT SETUP */
+:root {
+    /* --primary-color: #8DECB4;
+    --second-color: #41B06E; */
+    /* --blue-light-color: #15CDA8;
+    --blue-dark-color: #099A97; */
+    /* --red-dark-color: #860A35;
+    --red-light-color: #AF2655; */
+    --grey-color: #EEEEEE;
+    --light-color: #ffffff;
+    --dark-color: #141E46;
+    --black-color: #000000;
+    --red-color: #CF0A0A;
+    --orange-color: #DC5F00;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,13 +21,17 @@
     font-family: Verdana, sans-serif;
 }
 
+body {
+    background-color: var(--light-color);
+}
+
 /* HEADER STYLES */
 body>header {
-    background-color: #008170;
     display: flex;
     padding: 10px;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid var(--red-color);
 }
 
 header>img {
@@ -33,7 +53,7 @@ header>article>img {
 
 header>article h3,
 header>article h4 {
-    color: #fff;
+    color: var(--black-color);
 }
 
 /* HEADER STYLES - END*/
@@ -42,19 +62,21 @@ header>article h4 {
 main {
     display: flex;
     min-height: 450px;
+    border-bottom: 1px solid var(--red-color);
 }
 
 /* MAIN STYLES - END*/
 
 /* NAV STYLES */
 main>nav {
-    background-color: #00817093;
+    border-right: 1px solid var(--red-color);
+    /* 00817093 86469C 6ad4ddd3*/
 }
 
 .dropdown {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid rgb(109, 109, 109);
+    /* border-bottom: 2px solid var(--dark-color); */
 }
 
 .dropdown>div * {
@@ -63,13 +85,14 @@ main>nav {
     border: none;
     padding: 5px;
     font-weight: 600;
-    /* color: #FBF9F1; */
+    cursor: pointer;
 }
 
 .dropdown-label {
     display: flex;
     flex-direction: row-reverse;
     align-self: flex-start;
+    height: 27px;
     /* justify-content: space-between; */
     /* background-color: red; */
 }
@@ -80,7 +103,6 @@ main>nav {
     max-height: 0;
     overflow-y: hidden;
     transition: max-height 0.15s ease-out;
-    background-color: rgba(240, 248, 255, 0.788);
 }
 
 .dropdown-content.active {
@@ -91,72 +113,81 @@ main>nav {
 .dropdown-content a {
     text-decoration: none;
     text-transform: uppercase;
-    color: gray;
+    color: var(--red-color);
     padding-left: 26px;
     font-size: 12px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--dark-color);
     transition: 0.25s;
 }
 
 .dropdown-content a:hover {
-    background-color: #008170;
-    color: aliceblue;
+    background-color: var(--orange-color);
+    color: var(--light-color);
 }
 
 .dropdown-btn,
 .fa-sharp.fa-solid {
-    color: #4b4b4b;
     font-size: 14px;
-    background-color: aliceblue;
     width: 30px;
+    background-color: var(--orange-color);
+    color: var(--grey-color);
 }
 
 .dropdown-btn {
     width: 160px;
 }
 
+
 /* NAV STYLES - END*/
 
 /* SECTION STYLES */
 main>section {
-    background-color: #00817057;
-    flex-grow: 1;/* Sử dụng hết khoảng trống còn lại */
-}
-
-main>section .quick-assets-container {
-    display: grid;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: start;
-    align-content: flex-start;
-}
-
-
-.quick-assets-container>article {
-    /* background-color: red; */
-    height: 80px;
-    width: 100px;
+    flex-grow: 1;
+    /* Sử dụng hết khoảng trống còn lại */
     display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #fff;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.quick-assets-container>article a {
-    text-decoration: none;
+section table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 4px;
+}
+
+
+
+section table tbody tr td {
+    border: 1px solid gray;
+    padding: 10px 4px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+section table tbody tr td:hover {
+    background-color: var(--dark-color);
+    color: aliceblue;
+}
+
+section table thead {
+    height: 25px;
+    font-size: medium;
+    text-decoration: underline;
 }
 
 /* SECTION STYLES - END*/
 
 /* ASDIE STYLES */
 main>aside {
-    background-color: #0081703d;
     width: 160px;
+    border-left: 1px solid var(--red-color);
 }
 
-main aside * {
+main aside section {
     font-size: small;
+    border-bottom: 1px solid var(--black-color);
 }
+
 
 /* ASDIE STYLES - END*/
