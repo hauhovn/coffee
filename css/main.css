@@ -54,7 +54,7 @@ main>nav {
 .dropdown {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(109, 109, 109);
 }
 
 .dropdown>div * {
@@ -105,7 +105,7 @@ main>nav {
 
 .dropdown-btn,
 .fa-sharp.fa-solid {
-    color: gray;
+    color: #4b4b4b;
     font-size: 14px;
     background-color: aliceblue;
     width: 30px;
@@ -120,16 +120,15 @@ main>nav {
 /* SECTION STYLES */
 main>section {
     background-color: #00817057;
-    flex-grow: 1;
+    flex-grow: 1;/* Sử dụng hết khoảng trống còn lại */
 }
 
 main>section .quick-assets-container {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: start;
     align-content: flex-start;
-    /* Sử dụng hết khoảng trống còn lại */
 }
 
 
@@ -137,12 +136,10 @@ main>section .quick-assets-container {
     /* background-color: red; */
     height: 80px;
     width: 100px;
-    margin: 4px;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
     border: 1px solid #fff;
 }
 
