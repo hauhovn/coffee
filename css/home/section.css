@@ -1,0 +1,35 @@
+
+/* SECTION STYLES */
+main>section {
+    flex-grow: 1;
+    /* Sử dụng hết khoảng trống còn lại */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 4px;
+}
+section table tbody tr td {
+    border: 1px solid gray;
+    padding: 10px 4px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+section table tbody tr td:hover {
+    background-color: var(--dark-color);
+    color: aliceblue;
+}
+
+section table thead {
+    height: 25px;
+    font-size: medium;
+    text-decoration: underline;
+}
+
+/* SECTION STYLES - END*/

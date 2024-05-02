@@ -1,0 +1,29 @@
+@import "../main.css";
+@import "./header-footer.css";
+@import "./nav.css";
+@import "./section.css";
+body {
+    background-color: var(--bgColor-default);
+}
+
+
+/* MAIN STYLES */
+main {
+    display: flex;
+    min-height: 450px;
+    border-bottom: 1px solid var(--fgColor-default);
+}
+
+/* MAIN STYLES - END*/
+
+/* ASDIE STYLES */
+main>aside {
+    width: 160px;
+    border-left: 1px solid var(--fgColor-default);
+}
+
+main aside section {
+    font-size: small;
+    border-bottom: 1px solid var(--fgColor-default);
+}
+/* ASDIE STYLES - END*/
