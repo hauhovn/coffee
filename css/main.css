@@ -22,12 +22,6 @@
     --base-text-weight-semibold: 600;
 }
 :root {
-    /* --primary-color: #8DECB4;
-    --second-color: #41B06E; */
-    /* --blue-light-color: #15CDA8;
-    --blue-dark-color: #099A97; */
-    /* --red-dark-color: #860A35;
-    --red-light-color: #AF2655; */
     --grey-color: #EEEEEE;
     --light-color: #ffffff;
     --dark-color: #141E46;
@@ -40,16 +34,24 @@
     --fgColor-default: #e6edf3;
     --fgColor-accent: #4493f8;    
     --fgColor-muted: #636c76;
+    --fgColor-white: #ffffff;
+    --fgColor-green: #29903b;
+    --fgColor-orange: #DC5F00;
 
     --bgColor-default: #0d1117;
     --bgColor-black: #010409;
+
+    --borderColor-default: #30363d;
+    --borderColor-muted: #30363db3;
 }
-
-
 :root {
-    --boxShadow-thin: inset 0 0 0 max(1px, 0.0625rem);
-    --boxShadow-thick: inset 0 0 0 max(2px, 0.125rem);
-    --boxShadow-thicker: inset 0 0 0 max(4px, 0.25rem);
+    --button-primary-bgColor-rest: #238636;
+    --button-primary-bgColor-hover: #29903b;
+    --button-primary-bgColor-active: #2e9a40;
+    --button-primary-bgColor-disabled: #105823;
+}
+/* BORDER */
+:root{
     --borderWidth-thin: max(1px, 0.0625rem);
     --borderWidth-thick: max(2px, 0.125rem);
     --borderWidth-thicker: max(4px, 0.25rem);
@@ -57,9 +59,16 @@
     --borderRadius-medium: 0.375rem;
     --borderRadius-large: 0.75rem;
     --borderRadius-full: 624.9375rem;
+}
+
+:root {
+    --boxShadow-thin: inset 0 0 0 max(1px, 0.0625rem);
+    --boxShadow-thick: inset 0 0 0 max(2px, 0.125rem);
+    --boxShadow-thicker: inset 0 0 0 max(4px, 0.25rem);
     --outline-focus-offset: -0.125rem;
     --outline-focus-width: 0.125rem;
 }
+
 
 *{
     margin: 0;

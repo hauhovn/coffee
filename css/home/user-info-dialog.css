@@ -1,0 +1,16 @@
+.dialog{
+    display: block;
+    position: absolute;
+    height: 200px;
+    width: 150px;
+    /* top, right, bottom, left */
+    /* inset: 10px 20px 30px calc(100% - 250px);  */
+    right: 0;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(241, 241, 241, 0.5);
+}
+
+body{
+    
+  position: relative;
+}

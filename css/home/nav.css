@@ -1,7 +1,9 @@
 
 /* NAV STYLES */
 main>nav {
-    border-right: 1px solid var(--fgColor-default);
+    border-right: var(--borderWidth-thin,1px) 
+    solid var(--borderColor-default);
+    background-color: var(--bgColor-default);
     /* 00817093 86469C 6ad4ddd3*/
 }
 
@@ -45,16 +47,15 @@ main>nav {
 .dropdown-content a {
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--red-color);
+    color: var(--fgColor-default);
     padding-left: 26px;
     font-size: 12px;
-    border-bottom: 1px solid var(--dark-color);
-    transition: 0.25s;
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    transition: text-decoration-color 0.5s;
 }
 
 .dropdown-content a:hover {
-    background-color: var(--orange-color);
-    color: var(--light-color);
+    text-decoration-color:var(--fgColor-default);
 }
 
 .dropdown-btn,
@@ -62,7 +63,7 @@ main>nav {
     font-size: 14px;
     width: 30px;
     background-color: var( --overlay-bgColor);
-    color: var(--grey-color);
+    color: var(--fgColor-default);
 }
 
 .dropdown-btn {

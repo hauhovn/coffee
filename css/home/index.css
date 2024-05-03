@@ -2,8 +2,9 @@
 @import "./header-footer.css";
 @import "./nav.css";
 @import "./section.css";
+@import "./user-info-dialog.css";
 body {
-    background-color: var(--bgColor-default);
+    background-color: var(--bgColor-black);
 }
 
 
@@ -11,7 +12,6 @@ body {
 main {
     display: flex;
     min-height: 450px;
-    border-bottom: 1px solid var(--fgColor-default);
 }
 
 /* MAIN STYLES - END*/

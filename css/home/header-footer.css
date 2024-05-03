@@ -4,12 +4,15 @@ body>header {
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--fgColor-muted);
+    border-bottom:var(--borderWidth-thin,1px) 
+    solid var(--borderColor-default);
+    background-color: var(--bgColor-default);
     box-shadow: inset 0 calc(var(--borderWidth-thin, 1px)* -1);
     background-color: var(--bgColor-black);
+    font-size: 16px;
 }
 
-header>img {
+header img {
     height: auto;
     width: 120px;
 }
@@ -17,18 +20,35 @@ header>img {
 header>article {
     display: flex;
     align-items: center;
+    padding: 1em;
 }
 
-header>article>img {
+header>article img {
     height: 80px;
     width: 80px;
     border-radius: 40px;
     margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    transition: border 0.25s;
 }
-
+header>article img:hover{
+    border:var(--borderWidth-thick) solid var(--fgColor-white);
+}
 header>article h3,
 header>article h4 {
-    color: var(--fgColor-default);
+    color: var(--fgColor-white);
+}
+article .avarta-container {
+    display: flex;
+    flex-direction: column;
 }
 
 /* HEADER STYLES - END*/
+
+/* FOOTER STYLES */
+body>footer {
+    border-top: var(--borderWidth-thin,1px) 
+    solid var(--borderColor-default);
+    color: var(--fgColor-muted);
+}
