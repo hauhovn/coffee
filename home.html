@@ -1,94 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/home/index.css" />
-  </head>
+</head>
 
-  <body> <!-- User info dialog -->
-    <div class="dialog">
-      <form method="dialog">
-        <header>
-            <h3>Using dialog element</h3>
-        </header>
-        <article>
-            <p>This is a basic modal using the dialog element.</p>
-        </article>
-        <footer>
-            <button autofocus id="closeButton">Accept</button>
-        </footer>
-    </form>
+<body>
+    <!-- User info dialog -->
+    <div class="dialog-container">
+        <div class="dialog-content">
+            <article>
+                <img src="./img/user_avt_female.avif" alt="User avarta" id="avartar2" />
+                <div class="user-info">
+                    <h3>Username</h3>
+                    <h4>Manager</h4>
+                </div>
+            </article>
+            <article class="user-setting">
+                Setting
+            </article>
+            <article class="logout">
+                <button>Đăng xuất</button>
+            </article>
+        </div>
     </div>
     <header>
-      <img src="./img/logo-light.png" alt="Logo" height="45" width="45" />
-      <article>
-        <div class="user-info">
-          <h3>Username</h3>
-          <h4>Manager</h4>
-        </div>
-          <img src="./img/user_avt_female.avif" alt="User avarta" id="avartar"/>    
-      </article>
+        <img src="./img/logo-light.png" alt="Logo" height="45" width="45" />
+        <article>
+            <div class="user-info">
+                <h3>Username</h3>
+                <h4>Manager</h4>
+            </div>
+            <img src="./img/user_avt_female.avif" alt="User avarta" id="avartar" />
+        </article>
     </header>
-    
+
     <main>
-      <nav>
-        <div class="dropdown">
-          <div class="dropdown-label">
-            <button class="dropdown-btn">Công việc</button>
-            <i class="fa-sharp fa-solid fa-caret-down"></i>
-          </div>
-          <div class="dropdown-content active">
-            <a href="#" class="dropdown-item">Gọi món</a>
-            <a href="#" class="dropdown-item">Thanh toán</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <div class="dropdown-label">
-            <button class="dropdown-btn">Đơn nhân sự</button>
-            <i class="fa-sharp fa-solid fa-caret-down"></i>
-          </div>
-          <div class="dropdown-content active">
-            <a href="#" class="dropdown-item">Tăng ca</a>
-            <a href="#" class="dropdown-item">Lịch trực ca</a>
-            <a href="#" class="dropdown-item">Nghỉ phép</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <div class="dropdown-label">
-            <button class="dropdown-btn">Thông báo</button>
-            <i class="fa-sharp fa-solid fa-caret-down"></i>
-          </div>
-          <div class="dropdown-content active">
-            <a href="#" class="dropdown-item">Thông báo chung</a>
-            <a href="#" class="dropdown-item">Biến động</a>
-          </div>
-        </div>
-      </nav>
-      <section>
-        <table>
-          <thead>
-            <tr>
-              <th>Truy cập nhanh</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gọi món</td>
-              <td>Thanh toán</td>
-              <td>Tra cứu</td>
-            </tr>
-            <tr>
-              <td>Tăng ca</td>
-              <td>Lịch trực ca</td>
-              <td>Nghỉ phép</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <!-- <aside>
+        <nav>
+            <div class="dropdown">
+                <div class="dropdown-label">
+                    <button class="dropdown-btn">Công việc</button>
+                    <i class="fa-sharp fa-solid fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content active">
+                    <a href="#" class="dropdown-item">Gọi món</a>
+                    <a href="#" class="dropdown-item">Thanh toán</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-label">
+                    <button class="dropdown-btn">Đơn nhân sự</button>
+                    <i class="fa-sharp fa-solid fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content active">
+                    <a href="#" class="dropdown-item">Tăng ca</a>
+                    <a href="#" class="dropdown-item">Lịch trực ca</a>
+                    <a href="#" class="dropdown-item">Nghỉ phép</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-label">
+                    <button class="dropdown-btn">Thông báo</button>
+                    <i class="fa-sharp fa-solid fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content active">
+                    <a href="#" class="dropdown-item">Thông báo chung</a>
+                    <a href="#" class="dropdown-item">Biến động</a>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Truy cập nhanh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gọi món</td>
+                        <td>Thanh toán</td>
+                        <td>Tra cứu</td>
+                    </tr>
+                    <tr>
+                        <td>Tăng ca</td>
+                        <td>Lịch trực ca</td>
+                        <td>Nghỉ phép</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- <aside>
             Thông báo
             <section>Nhân viên X gia nhập</section>
             <section>Xa thải nhân viên Y </section>
@@ -96,19 +102,16 @@
         </aside> -->
     </main>
     <footer>
-      <section class="company-info">
-        <h4>Công ty TNHH XYZ</h4>
-        <h5>
-          Địa chỉ: đường Leng Reng, xã Leng Keng, tx. Leng Cheng, tp. Kính Kong
-        </h5>
-        <h5>Email: XYZ@comp.vn</h5>
-      </section>
+        <section class="company-info">
+            <h4>Công ty TNHH XYZ</h4>
+            <h5>
+                Địa chỉ: đường Leng Reng, xã Leng Keng, tx. Leng Cheng, tp. Kính Kong
+            </h5>
+            <h5>Email: XYZ@comp.vn</h5>
+        </section>
     </footer>
     <script src="./js/home/index.js"></script>
-    <script
-      src="https://kit.fontawesome.com/3bcb8223c5.js"
-      ;
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://kit.fontawesome.com/3bcb8223c5.js" ; crossorigin="anonymous"></script>
+</body>
+
 </html>

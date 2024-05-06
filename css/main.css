@@ -15,12 +15,14 @@
     --body-font-size: 0.875rem;
     --font-size-small: 0.75rem;
 }
+
 :root {
     --base-text-weight-light: 300;
     --base-text-weight-normal: 400;
     --base-text-weight-medium: 500;
     --base-text-weight-semibold: 600;
 }
+
 :root {
     --grey-color: #EEEEEE;
     --light-color: #ffffff;
@@ -32,7 +34,7 @@
     --overlay-bgColor: #161b22;
 
     --fgColor-default: #e6edf3;
-    --fgColor-accent: #4493f8;    
+    --fgColor-accent: #4493f8;
     --fgColor-muted: #636c76;
     --fgColor-white: #ffffff;
     --fgColor-green: #29903b;
@@ -44,14 +46,16 @@
     --borderColor-default: #30363d;
     --borderColor-muted: #30363db3;
 }
+
 :root {
     --button-primary-bgColor-rest: #238636;
     --button-primary-bgColor-hover: #29903b;
     --button-primary-bgColor-active: #2e9a40;
     --button-primary-bgColor-disabled: #105823;
 }
+
 /* BORDER */
-:root{
+:root {
     --borderWidth-thin: max(1px, 0.0625rem);
     --borderWidth-thick: max(2px, 0.125rem);
     --borderWidth-thicker: max(4px, 0.25rem);
@@ -69,11 +73,16 @@
     --outline-focus-width: 0.125rem;
 }
 
+/* PADDING */
+:root {
+    --padding-small: 0.5em;
+    --padding-medium: 1em;
+    --padding-large: 1.2em;
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
 }
-

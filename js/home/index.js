@@ -1,5 +1,6 @@
 const avartar = document.getElementById('avartar');
-
+const dialogContainer = document.querySelector('.dialog-container');
+const dialogContent = document.querySelector('.dialog-content');
 
 //Dropdown
 document.addEventListener('DOMContentLoaded', function () {
@@ -21,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             //Đổi icon
             const dropdownIcon = dropdown.querySelector('.fa-sharp');
-            if (dropdownIcon.classList.value.includes('fa-caret-down')){
+            if (dropdownIcon.classList.value.includes('fa-caret-down')) {
                 dropdownIcon.classList.remove('fa-caret-down');
                 dropdownIcon.classList.add('fa-xmark');
-            }else{
+            } else {
                 dropdownIcon.classList.add('fa-caret-down');
                 dropdownIcon.classList.remove('fa-xmark');
             }
@@ -32,7 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Onclick avt
-avartar.onclick = ()=>{
-    console.log(`he`);
+// Onclick avt => show dialog
+avartar.onclick = () => {
+    console.log(`cc`);
+    dialogContainer.classList.add('active');
+    dialogContent.classList.add('active');
+}
+
+// Khi click close dialog
+dialogContainer.onclick = (e) => {
+    if (e.target == dialogContainer) {
+        dialogContainer.classList.remove('active');
+        dialogContent.classList.remove('active');
+    }
 }
